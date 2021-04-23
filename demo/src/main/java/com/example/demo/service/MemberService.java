@@ -1,14 +1,14 @@
-package com.example.service;
+package com.example.demo.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.domain.Member;
-import com.example.demo.repository.MemberRepository;
+import com.example.demo.repository.memberRepository;
 import com.example.demo.repository.MemoryMemberRepository;
 
 public class MemberService {
-	private final MemberRepository memberRepository = new MemoryMemberRepository();
+	private final memberRepository memberRepository = new MemoryMemberRepository();
 
 	/**
 	 * 회원가입
