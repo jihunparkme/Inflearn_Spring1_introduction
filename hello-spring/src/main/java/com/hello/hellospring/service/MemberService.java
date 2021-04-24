@@ -8,7 +8,13 @@ import com.hello.hellospring.repository.MemoryMemberRepository;
 import com.hello.hellospring.repository.memberRepository;
 
 public class MemberService {
-	private final memberRepository memberRepository = new MemoryMemberRepository();
+	
+	private final memberRepository memberRepository;
+	
+	// DI : 외부에서 Repository를 주입
+	public MemberService(memberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
 
 	/**
 	 * 회원가입
