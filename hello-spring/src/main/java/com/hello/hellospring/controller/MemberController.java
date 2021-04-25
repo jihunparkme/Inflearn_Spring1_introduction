@@ -16,14 +16,37 @@ import com.hello.hellospring.service.MemberService;
 @Controller
 public class MemberController {
 	
-	private final MemberService memberService;
-
+	// 1. DI 필드 주입
+	/*
+	 * 단점 : Spring이 가동될 때를 제외하고  바꿀 수 있는 방법이 없어서 안 좋음!!
+	 */
+//	 @Autowired private MemberService memberService;
+	
+	
+	// 2. DI 생성자 주입 (요즘 추천하는 방법)
+	/*
+	 * Spring 조립 시 설정해두고 의존관계가 더이상 바꿀 수 없도록 설정
+	 */
 	/* DI (Depedency Injection) : 의존 관계를 주입!
 	 * Member Controller가 생성이 될 때 
 	 * Spring Bean에 등록되어 있는 memberService 객체를 사용 
 	 */
+	private final MemberService memberService;
+	
 	@Autowired
-	public MemberController(MemberService memberService) {
+	public MemberController(MemberService memberService) { 
 		this.memberService = memberService;
 	}
+
+	
+	// 3. DI Setter 주입
+	/*
+	 * 단점 : Spring 조립 후 중간에 setter를 호출할 일이 없는데, pubilc 메서드로 노출되어서 좋지 않음!!
+	 */
+//	private MemberService memberService;
+//	
+//	@Autowired
+//	public void setMemberService(MemberService memberService) {
+//		this.memberService = memberService;
+//	}
 }
