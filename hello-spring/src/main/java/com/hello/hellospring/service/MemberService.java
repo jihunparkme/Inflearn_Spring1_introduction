@@ -3,6 +3,8 @@ package com.hello.hellospring.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,10 @@ import com.hello.hellospring.repository.MemberRepository;
 
 /*
  * Spring Container에 Service 객체로 등록
+ * 
+ * @Transactional : JPA는 join 들어올 때 모든 데이터 변경이 transaction 안에서 실행되어야 함
  */
+@Transactional
 public class MemberService {
 	
 	private final MemberRepository memberRepository;
