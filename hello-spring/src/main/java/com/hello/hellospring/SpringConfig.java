@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.hello.hellospring.repository.JdbcMemberRepository;
+import com.hello.hellospring.repository.JdbcTemplateMemberRepository;
 import com.hello.hellospring.repository.MemberRepository;
 import com.hello.hellospring.repository.MemoryMemberRepository;
 import com.hello.hellospring.service.MemberService;
@@ -31,6 +32,7 @@ public class SpringConfig {
 	public MemberRepository memberRepository() {
 		// Spring DI를 사용하면 기존 코드를 손대지 않고, 설정만으로 구현 클래스를 변경할 수 있음
 //		return new MemoryMemberRepository();
-		return new JdbcMemberRepository(dataSource);
+//		return new JdbcMemberRepository(dataSource);
+		return new JdbcTemplateMemberRepository(dataSource);
 	}
 }
