@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.hello.hellospring.aop.TimeTraceAop;
 import com.hello.hellospring.repository.MemberRepository;
 import com.hello.hellospring.service.MemberService;
 
@@ -26,6 +27,11 @@ public class SpringConfig {
 	@Bean
 	public MemberService memberService() {
 		return new MemberService(memberRepository);
+	}
+	
+	@Bean
+	public TimeTraceAop timeTraceAop() { // 직접 Bean으로 등록하면서 아~ AOP가 쓰이는구나를 인지
+		return new TimeTraceAop();
 	}
 
 //	@Bean
