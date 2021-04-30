@@ -21,6 +21,8 @@ class MemberServiceTest {
 	MemberService memberService;
 	MemoryMemberRepository memberRepository;
 
+	// 각 테스트 실행 전에 호출
+	// 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고, 의존관계도 새로 맺어줌
 	@BeforeEach
 	public void beforeEach() {
 		memberRepository = new MemoryMemberRepository();
