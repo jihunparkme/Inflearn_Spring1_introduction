@@ -6,13 +6,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/*
+ * Spring이 실행되면서 Spring Container가 생기는데, 
+ * @Controller annotation이 있다면 객체를 생성하여 Spring에 넣어 두고 관리
+ * Spring Container에서 Spring Bean이 관리된다고 표현.
+ * 
+ * Controller를 통해 외부 요청을 받고, Service에서 Businesses Logic을 만들고, Repository에서 데이터를 저장
+ */
 @Controller
 public class HelloController {
 
 	/*
+	 * Controller에서 매핑되는 URL이은 welcome page(static/index.html)보다 높은 우선순위를 갖음.
+	 *
 	 * 컨트롤러에서 리턴 값으로 문자를 반환하면 viewResolver가 화면을 찾아서 처리
-	 * Spring Boot 템플릿 엔진은 기본으로 viewName 매핑
-	 * resources:templates/{ViewName}.html
+	 * Spring Boot 템플릿 엔진은 기본으로 viewName 매핑 (resources:templates/{ViewName}.html)
 	 */
 	@GetMapping("hello")
 	public String hello(Model model) {

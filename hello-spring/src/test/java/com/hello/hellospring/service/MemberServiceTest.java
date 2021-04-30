@@ -29,6 +29,8 @@ class MemberServiceTest {
 		memberService = new MemberService(memberRepository);
 	}
 
+	// 메서드 실행이 끝날 때마다 동작
+	// 테스트는 서로 의존관계 없이 동작해야 한다!
 	@AfterEach
 	public void afterEach() {
 		memberRepository.clearStore();

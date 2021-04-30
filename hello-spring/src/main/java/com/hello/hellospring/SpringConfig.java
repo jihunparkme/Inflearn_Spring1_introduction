@@ -18,7 +18,6 @@ public class SpringConfig {
 	
 	/*
 	 *  @Autowired가 있으면 스프링이 연관된 객체를 스프링 컨테이너에서 찾아서 넣어준다
-	 *  객체 의존관계를 외부에서 넣어주는 것을 DI
 	 */
 	@Autowired
 	public SpringConfig(MemberRepository memberRepository) {
