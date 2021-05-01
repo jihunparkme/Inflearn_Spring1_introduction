@@ -1,4 +1,4 @@
-#Inflearn_Spring1_introduction
+# Inflearn_Spring1_introduction
 (Inflearn) 스프링 입문 - 코드로 배우는 스프링 부트, 웹 MVC, DB 접근 기술
 
 Spring 핵심 원리를 이해하기 위해 기초부터 다시 차근차근 쌓아보자👊🎉
